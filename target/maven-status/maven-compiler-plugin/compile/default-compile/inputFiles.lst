@@ -1,0 +1,13 @@
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/MySQLQueries.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/PersistenceFactory.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/repository/UsuarioRepository.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/FtoCService.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/UsuarioService.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/EnumPersistence.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/CtoFService.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/models/Usuario.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/repository/GrupoRepository.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/models/Grupo.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/util/UsuarioValidator.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/IPersistenceService.java
+/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/MySQLPersistence.java
