@@ -171,7 +171,10 @@ public class UsuarioService {
 			if(usuario.getGrupo() != null && !usuario.getGrupo().getName().isEmpty()){
 				grupo = persistencia.getGrupo(usuario.getGrupo().getName());
 				if(grupo != null){
-					usuario.setGrupo(grupo);
+					GrupoUsuario usuarioGrupo = new GrupoUsuario(grupo.getId(),
+							grupo.getName(),
+							grupo.getSelf());
+					usuario.setGrupo(usuarioGrupo);
 				} else {
 					String responseText = "{\"error\":\"Group does not exist.\"}";
 					return Response.status(400).entity(responseText).build();
@@ -237,7 +240,10 @@ public class UsuarioService {
 			String responseText = "{\"error\":\"" + e1.getMessage() + "\"}";
 			return Response.status(400).entity(responseText).build();
 		}
-		usuario.setGrupo(grupo);
+		GrupoUsuario usuarioGrupo = new GrupoUsuario(grupo.getId(),
+				grupo.getName(),
+				grupo.getSelf());
+		usuario.setGrupo(usuarioGrupo);
 		usuario.setId(Integer.parseInt(usuarioId));
 		try {
 			persistencia.updateUser(usuario, "group");

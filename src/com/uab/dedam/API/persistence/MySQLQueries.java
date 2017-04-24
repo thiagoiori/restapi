@@ -50,6 +50,12 @@ public final class MySQLQueries {
 				" WHERE idusuario = ?";
 		return Sql;
 	}
+	
+	public static String getDeleteGroupQuery() {
+		String Sql = "delete from `DedamSQLDB`.`grupo` " +  
+				" WHERE idgrupo = ?";
+		return Sql;
+	}
 
 	public static String getSelectUserQueryByAlias() {
 		String Sql = "SELECT `idusuario`,usr.self usrself,`alias`,usr.name usrname,`surname`,`age`,`phone`, usr.idgrupo,`photo`," +

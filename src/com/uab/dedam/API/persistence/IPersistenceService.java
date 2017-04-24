@@ -20,5 +20,5 @@ public interface IPersistenceService {
 	void deleteUser(int usuarioId) throws SQLException;
 	void deleteUserProperty(Usuario usuario, String propriedade) throws SQLException;
 	Usuario getUsuarioByAlias(String alias) throws SQLException;
-	
+	void deleteGroup(Integer groupId) throws SQLException;
 }

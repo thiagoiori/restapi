@@ -15,9 +15,13 @@ public class UsuarioValidatorTest {
 	public void testIsUsuarioValid() {
 		Usuario usuario = new Usuario();
 		try{
+			usuario.setAlias("sonic");
+			usuario.setName("Sonic");
+			usuario.setSurname("The Hedgehodge");
 			UsuarioValidator.isUsuarioValid(usuario);
+			assertTrue("Validando usuario", true);
 		} catch(InvalidParameterException ex) {
-			assertTrue("Usuario invalido", true);
+			fail("Failed to validate the user. Parameter: " + ex.getMessage());
 		}
 	}
 

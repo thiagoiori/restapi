@@ -5,13 +5,13 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 
 @JsonSerialize(include = Inclusion.NON_NULL)
-public class Grupo {
+public class GrupoUsuario {
 	
-	public Grupo(){
+	public GrupoUsuario(){
 		
 	}
 	
-	public Grupo(Integer id,
+	public GrupoUsuario(Integer id,
 			String name,
 			String self){
 		this.setId(id);
@@ -20,7 +20,7 @@ public class Grupo {
 	}
 
 	private Integer id;
-	//@JsonIgnore
+	@JsonIgnore
 	public Integer getId() {
 		return id;
 	}

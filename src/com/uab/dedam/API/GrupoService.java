@@ -91,7 +91,7 @@ public class GrupoService {
 		}
 		
 		try{
-		persistencia.saveGrupo(grupo);
+			persistencia.saveGrupo(grupo);
 		}
 		catch(SQLException argEx){
 			String responseText = "{\"error\":\"" + argEx.getMessage() + "\"}";

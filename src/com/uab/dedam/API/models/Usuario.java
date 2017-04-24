@@ -1,7 +1,6 @@
 package com.uab.dedam.API.models;
 
 import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonFilter;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 
@@ -19,7 +18,7 @@ public class Usuario {
 	private String surname;
 	private Integer age;
 	private Integer phone;
-	private Grupo grupo;
+	private GrupoUsuario grupo;
 	private String photo;
 	
 	public String getSelf() {
@@ -59,11 +58,11 @@ public class Usuario {
 		this.phone = phone;
 	}
 	@JsonProperty("group")
-	public Grupo getGrupo() {
+	public GrupoUsuario getGrupo() {
 		return grupo;
 	}
 	@JsonProperty("group")
-	public void setGrupo(Grupo grupo) {
+	public void setGrupo(GrupoUsuario grupo) {
 		this.grupo = grupo;
 	}
 	public String getPhoto() {

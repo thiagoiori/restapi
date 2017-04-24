@@ -10,15 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.uab.dedam.API.models.Grupo;
+import com.uab.dedam.API.models.GrupoUsuario;
 import com.uab.dedam.API.models.Usuario;
 import com.uab.dedam.API.models.UsuarioFiltered;
 
 public class MySQLPersistence implements IPersistenceService{
 
 	private static String DB_DRIVER = "com.mysql.jdbc.Driver";
-	private static String DB_CONNECTION = "jdbc:mysql://xxxxx.cmfoddq8scnn.eu-central-1.rds.amazonaws.com:3306/Base";
-	private static String DB_USER = "user";
-	private static String DB_PASSWORD = "pwd";
+	private static String DB_CONNECTION = "jdbc:mysql://127.0.0.1:3306/DedamSQLDB";
+	private static String DB_USER = "restapiuser";
+	private static String DB_PASSWORD = "DedamRestAPIDB";
 	
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
@@ -56,7 +57,7 @@ public class MySQLPersistence implements IPersistenceService{
 	            	usuario.setAge(queryResults.getInt(6));
 	            	usuario.setPhone(queryResults.getInt(7));
 	            	if(queryResults.getInt(8) > 0){
-	            		Grupo grupo = new Grupo(queryResults.getInt(8),
+	            		GrupoUsuario grupo = new GrupoUsuario(queryResults.getInt(8),
 	            				queryResults.getString(10),
 	            				queryResults.getString(11));
 	            		usuario.setGrupo(grupo);
@@ -97,7 +98,7 @@ public class MySQLPersistence implements IPersistenceService{
 	            	usuario.setAge(queryResults.getInt(6));
 	            	usuario.setPhone(queryResults.getInt(7));
 	            	if(queryResults.getInt(8) > 0){
-	            		Grupo grupo = new Grupo(queryResults.getInt(8),
+	            		GrupoUsuario grupo = new GrupoUsuario(queryResults.getInt(8),
 	            				queryResults.getString(10),
 	            				queryResults.getString(11));
 	            		usuario.setGrupo(grupo);
@@ -154,8 +155,14 @@ public class MySQLPersistence implements IPersistenceService{
 	    statement.setString(2, usuario.getAlias());
 	    statement.setString(3, usuario.getName());
 	    statement.setString(4, usuario.getSurname());
-	    statement.setInt(5, usuario.getAge());
-	    statement.setInt(6, usuario.getPhone());
+	    if(usuario.getAge() == null)
+	    	statement.setNull(5, java.sql.Types.INTEGER);
+	    else
+	    	statement.setInt(5, usuario.getAge());
+	    if(usuario.getPhone() == null)
+	    	statement.setNull(6, java.sql.Types.INTEGER);
+	    else
+	    	statement.setInt(6, usuario.getPhone());
 	    if(usuario.getGrupo() != null)
 	    	statement.setInt(7, usuario.getGrupo().getId());
 	    else
@@ -323,10 +330,10 @@ public class MySQLPersistence implements IPersistenceService{
 	            	usuario.setAge(queryResults.getInt(6));
 	            	usuario.setPhone(queryResults.getInt(7));
 	            	if(queryResults.getInt(8) > 0){
-	            		Grupo grupo = new Grupo(queryResults.getInt(8),
+	            		GrupoUsuario grupo = new GrupoUsuario(queryResults.getInt(8),
 	            				queryResults.getString(10),
 	            				queryResults.getString(11));
-	            		usuario.setGrupo(getGrupo(queryResults.getInt(8)));
+	            		//usuario.setGrupo(getGrupo(queryResults.getInt(8)));
 	            	}
 	            	else
 	            		usuario.setGrupo(null);
@@ -448,5 +455,35 @@ public class MySQLPersistence implements IPersistenceService{
 		statement.setInt(2, usuario.getId());
 	    
 	    return statement;
+	}
+
+	@Override
+	public void deleteGroup(Integer groupId) throws SQLException {
+		PreparedStatement statement = null;
+		int affectedRows = 0;
+		try (Connection connection = getDBConnection()) {
+			statement = createDeleteGrupoPreparedStatement(connection, groupId);
+		    affectedRows = statement.executeUpdate();
+	        if (affectedRows == 0) {
+	            throw new SQLException("Update user failed, no rows affected.");
+	        }
+		} finally {
+			if (statement != null) {
+				statement.close();
+			}
+		}
+	}
+	
+	private PreparedStatement createDeleteGrupoPreparedStatement(
+			Connection connection, 
+			int grupoId) 
+						throws 
+						SQLException {
+			PreparedStatement statement = null;
+			String sql = MySQLQueries.getDeleteGroupQuery();
+			statement = connection.prepareStatement(sql);					
+			statement.setInt(1, grupoId);
+		    
+		    return statement;
 	}
 }
