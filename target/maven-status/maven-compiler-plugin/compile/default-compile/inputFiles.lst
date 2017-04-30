@@ -1,13 +1,16 @@
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/MySQLQueries.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/PersistenceFactory.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/repository/UsuarioRepository.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/FtoCService.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/UsuarioService.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/EnumPersistence.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/CtoFService.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/models/Usuario.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/repository/GrupoRepository.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/models/Grupo.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/util/UsuarioValidator.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/IPersistenceService.java
-/Users/thiago/Documents/workspacePracticaAPI/RestAP/src/com/uab/dedam/API/persistence/MySQLPersistence.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/models/CustomFieldResponse.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/models/GrupoUsuario.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/models/Usuario.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/UsuarioService.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/repository/UsuarioRepository.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/util/UsuarioValidator.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/persistence/PersistenceFactory.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/persistence/MySQLPersistence.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/persistence/IPersistenceService.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/persistence/MySQLQueries.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/repository/GrupoRepository.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/models/Grupo.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/GrupoService.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/util/GrupoValidator.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/persistence/EnumPersistence.java
+/Users/haduart/Dropbox/Projects/UAB-Master/Corretgir Entregues 2016/ThiagoLori/src/main/java/com/uab/dedam/API/models/UsuarioFiltered.java

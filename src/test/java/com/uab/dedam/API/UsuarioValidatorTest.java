@@ -1,4 +1,4 @@
-package com.uab.dedam.API.test;
+package com.uab.dedam.API;
 
 import static org.junit.Assert.*;
 
