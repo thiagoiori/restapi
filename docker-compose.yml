@@ -1,7 +1,28 @@
 version: "2"
 
 services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: whatever
+      MYSQL_DATABASE: DedamSQLDB
+      MYSQL_USER: restapiuser
+      MYSQL_PASSWORD: DedamRestAPIDB
+
   restapi: 
-    image: restapidedam
+    build: .
     ports:
       - "8080:8080"
+    restart: always
+    depends_on:
+      - mysql
+    environment:
+      MYSQL_URL: 127.0.0.1
+      MYSQL_PORT: 3306
+      MYSQL_USER: restapiuser
+      MYSQL_PASSWORD: DedamRestAPIDB
+volumes:
+  db_data:

@@ -4,6 +4,7 @@ import com.uab.dedam.API.models.Grupo;
 import com.uab.dedam.API.models.GrupoUsuario;
 import com.uab.dedam.API.models.Usuario;
 import com.uab.dedam.API.models.UsuarioFiltered;
+import com.uab.dedam.API.util.EnvironmentVariables;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,7 +13,8 @@ import java.util.List;
 public class MySQLPersistence implements IPersistenceService {
 
     private static String DB_DRIVER = "com.mysql.jdbc.Driver";
-    private static String DB_CONNECTION = "jdbc:mysql://127.0.0.1:3306/DedamSQLDB";
+    private static String MYSQL_URL = "127.0.0.1";
+    private static String MYSQL_PORT = "3306";
     private static String DB_USER = "restapiuser";
     private static String DB_PASSWORD = "DedamRestAPIDB";
 
@@ -25,8 +27,14 @@ public class MySQLPersistence implements IPersistenceService {
         }
 
         try {
-            dbConnection = DriverManager.getConnection(
-                    DB_CONNECTION, DB_USER, DB_PASSWORD);
+            String url = EnvironmentVariables.getVariableValue("MYSQL_URL", MYSQL_URL);
+            String port = EnvironmentVariables.getVariableValue("MYSQL_PORT", MYSQL_PORT);
+            String user = EnvironmentVariables.getVariableValue("MYSQL_USER", DB_USER);
+            String password = EnvironmentVariables.getVariableValue("MYSQL_PASSWORD", DB_PASSWORD);
+
+            String dbConnectionString = "jdbc:mysql://" + url + ":" + port + "/DedamSQLDB";
+
+            dbConnection = DriverManager.getConnection(dbConnectionString, user, password);
             return dbConnection;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
